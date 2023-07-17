@@ -1,7 +1,7 @@
 export default function App() {
   return (
-    <>
-      <p>Home</p>
-    </>
+    <section className="section">
+      <h4>Home</h4>
+    </section>
   );
 }
