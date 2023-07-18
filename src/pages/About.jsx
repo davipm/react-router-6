@@ -4,7 +4,9 @@ export default function About() {
   return (
     <section className="section">
       <h2>About</h2>
-      <Link to="/">Back Home</Link>
+      <Link to="/" className="btn">
+        Back Home
+      </Link>
     </section>
   );
 }
