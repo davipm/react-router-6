@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export default function StyledNavbar() {
   return (
-    <nav>
+    <nav className="navbar">
       <NavLink
         to="/"
         className={({ isActive }) => (isActive ? "link active" : "link")}
@@ -10,19 +10,19 @@ export default function StyledNavbar() {
         Home
       </NavLink>
       <NavLink
-        to="/"
+        to="/about"
         className={({ isActive }) => (isActive ? "link active" : "link")}
       >
         About
       </NavLink>
       <NavLink
-        to="/"
+        to="/products"
         className={({ isActive }) => (isActive ? "link active" : "link")}
       >
         Products
       </NavLink>
       <NavLink
-        to="/"
+        to="/login"
         className={({ isActive }) => (isActive ? "link active" : "link")}
       >
         Login

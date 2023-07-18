@@ -1,17 +1,22 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+export default function Login({ setUser }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
-  async function handleLogin(event) {
+  const navigate = useNavigate();
+
+  async function handleSubmit(event) {
     event.preventDefault();
-    console.log(event);
+    if (!name || !email) return;
+    setUser({ name, email });
+    navigate("/dashboard");
   }
 
   return (
     <section className="section">
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleSubmit} className="form">
         <h5>Login</h5>
         <div className="form-row">
           <label htmlFor="name" className="form-label">
@@ -21,6 +26,7 @@ export default function Login() {
             type="text"
             name="name"
             id="name"
+            className="form-input"
             value={name}
             onChange={(event) => setName(event.target.value)}
           />
@@ -34,6 +40,7 @@ export default function Login() {
             type="email"
             name="email"
             id="email"
+            className="form-input"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
           />
