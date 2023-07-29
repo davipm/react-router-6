@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Login({ setUser }) {
+const Login = memo(function Login({ setUser }) {
   const navigate = useNavigate();
 
   const [formItems, setFormItems] = useState({
@@ -61,4 +61,6 @@ export default function Login({ setUser }) {
       </form>
     </section>
   );
-}
+})
+
+export default Login;
