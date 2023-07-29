@@ -2,16 +2,25 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Login({ setUser }) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-
   const navigate = useNavigate();
+
+  const [formItems, setFormItems] = useState({
+    name: '',
+    email: ''
+  })
 
   async function handleSubmit(event) {
     event.preventDefault();
+    const { name, email } = formItems;
+
     if (!name || !email) return;
     setUser({ name, email });
     navigate("/dashboard");
+  }
+
+  function handleFormInput(event) {
+    const { name, value } = event.target
+    setFormItems({...formItems, [name]: value})
   }
 
   return (
@@ -27,8 +36,8 @@ export default function Login({ setUser }) {
             name="name"
             id="name"
             className="form-input"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
+            value={formItems.name}
+            onChange={handleFormInput}
           />
         </div>
 
@@ -41,8 +50,8 @@ export default function Login({ setUser }) {
             name="email"
             id="email"
             className="form-input"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
+            value={formItems.email}
+            onChange={handleFormInput}
           />
         </div>
 

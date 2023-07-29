@@ -12,8 +12,23 @@ import Dashboard from "./pages/Dashboard.jsx";
 import Error from "./pages/Error.jsx";
 import SingleProduct from "./pages/SingleProduct.jsx";
 
+import StyledNavbar from "./components/StyledNavbar.jsx";
+import Footer from "./components/Footer.jsx";
+import AlternativeRoutes from './routes.jsx'
+
 export default function App() {
   const [user, setUser] = useState(null);
+  const renderWithRoutes = false
+
+  if (renderWithRoutes) {
+    return (
+      <>
+        <StyledNavbar />
+        <AlternativeRoutes user={user} setUser={setUser} />
+        <Footer />
+      </>
+    )
+  }
 
   return (
     <Routes>
