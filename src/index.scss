@@ -141,11 +141,11 @@ ul {
   transition: var(--transition);
   text-transform: capitalize;
   display: inline-block;
-}
 
-.btn:hover {
-  background-color: var(--primary-700);
-  box-shadow: var(--shadow-3);
+  &:hover {
+    background-color: var(--primary-700);
+    box-shadow: var(--shadow-3);
+  }
 }
 
 .form {
@@ -156,32 +156,33 @@ ul {
   box-shadow: var(--shadow-2);
   padding: 2rem 2.5rem;
   margin: 3rem 0;
-}
 
-.form-label {
-  display: block;
-  font-size: var(--small-text);
-  margin-bottom: .5rem;
-  text-transform: capitalize;
-  letter-spacing: var(--letterSpacing);
-}
+  &-label {
+    display: block;
+    font-size: var(--small-text);
+    margin-bottom: .5rem;
+    text-transform: capitalize;
+    letter-spacing: var(--letterSpacing);
+  }
 
-.form-input, .form-textarea {
-  width: 100%;
-  padding: .375rem 0.75rem;
-  background-color: var(--backgroundColor);
-  border: 1px solid var(--grey-200);
-  border-radius: var(--borderRadius);
-  transition: var(--transition);
-}
+  &-input, &-textarea {
+    display: block;
+    width: 100%;
+    padding: .375rem 0.75rem;
+    background-color: var(--backgroundColor);
+    border: 1px solid var(--grey-200);
+    border-radius: var(--borderRadius);
+    transition: var(--transition);
 
-.form-input:focus, .form-textarea:focus {
-  outline: none;
-  border-color: var(--grey-500);
-}
+    &:focus {
+      outline: none;
+      border-color: var(--grey-500);
+    }
+  }
 
-.form-row {
-  margin-bottom: 1rem;
+  &-row {
+    margin-bottom: 1rem;
+  }
 }
 
 .section {
@@ -207,17 +208,19 @@ ul {
   color: var(--primary-500);
 }
 
-.products article {
-  margin-bottom: 1rem;
-}
+.products {
+  article {
+    margin-bottom: 1rem;
+  }
 
-.products h5 {
-  margin-bottom: 0;
-}
+  h5 {
+    margin-bottom: 0;
+  }
 
-.products img {
-  width: 200px;
-  height: 150px;
+  img {
+    width: 200px;
+    height: 150px;
+  }
 }
 
 footer {
