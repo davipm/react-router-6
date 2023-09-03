@@ -34,16 +34,16 @@ export default function App() {
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="login" element={<Login setUser={setUser} />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login setUser={setUser} />} />
 
-        <Route path="products" element={<SharedProductLayout />}>
+        <Route path="/products" element={<SharedProductLayout />}>
           <Route index element={<Products />} />
           <Route path=":productId" element={<SingleProduct />} />
         </Route>
 
         <Route
-          path="dashboard"
+          path="/dashboard"
           element={
             <ProtectedRoute user={user}>
               <Dashboard user={user} />
